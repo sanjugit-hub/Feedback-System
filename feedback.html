@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIsoTEx Feedback</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#18345b;font:13px Arial,Helvetica,sans-serif}
+main{max-width:760px;margin:0 auto;padding:18px 15px 24px}h1{color:#214b86;font-size:22px;margin:0 0 17px}
+.intro{line-height:1.45;color:#344a68;margin:0 0 18px}fieldset{border:0;border-top:1px solid #d9e0e9;margin:0 0 16px;padding:14px 0 0;min-width:0}
+legend{font-weight:bold;padding:0 4px 0 0;margin-bottom:13px}label{display:block;font-weight:bold;margin:0 0 5px}
+select,textarea,input{display:block;width:100%;border:1px solid #b8c7d9;border-radius:5px;background:#fff;color:#24364d;font:inherit;padding:8px;margin:0 0 10px}
+select,input{height:36px}textarea{min-height:86px;resize:vertical;line-height:1.4}
+.hint{color:#536b88;font-size:11px;line-height:1.4;margin:2px 0 0}.actions{margin-top:22px}
+button{background:#21477f;color:white;border:0;border-radius:5px;padding:9px 16px;font:inherit;cursor:pointer}
+button:hover{background:#173660}.trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+</style>
+</head>
+<body><main>
+<h1>MIsoTEx Feedback</h1>
+<p class="intro">Help us improve MIsoTEx for the research community. You can submit feedback anonymously.<br>
+Researcher and contact details are optional.</p>
+<form action="/MIsoTEx/misotex_feedback_starter/feedback.py" method="post">
+<fieldset><legend>1. Overall experience</legend>
+<label for="rating">How would you rate MIsoTEx? (optional)</label>
+<select id="rating" name="rating">
+<option value="">Select a rating</option><option value="5">5 - Excellent</option><option value="4">4 - Good</option>
+<option value="3">3 - Average</option><option value="2">2 - Poor</option><option value="1">1 - Very poor</option>
+</select></fieldset>
+<fieldset><legend>2. Your feedback</legend>
+<label for="comments">Describe your suggestion, issue or experience *</label>
+<textarea id="comments" name="comments" maxlength="5000" required placeholder="Please do not include passwords, confidential data or sensitive personal information."></textarea>
+<p class="hint">Maximum 5,000 characters. For a technical issue, mention the page or action that caused the problem.</p>
+</fieldset>
+<fieldset><legend>3. Your details (optional)</legend>
+<label for="researcher_name">Name</label><input id="researcher_name" name="researcher_name" maxlength="150" autocomplete="name">
+<label for="designation">Designation / Role</label><input id="designation" name="designation" maxlength="150" autocomplete="organization-title" placeholder="e.g., Research Scholar, Faculty, Bioinformatician">
+<label for="country">Country</label><input id="country" name="country" maxlength="100" autocomplete="country-name">
+<label for="institution">Institution / University</label><input id="institution" name="institution" maxlength="255" autocomplete="organization">
+<label for="contact_email">Email</label><input id="contact_email" name="contact_email" type="email" maxlength="254" autocomplete="email">
+<p class="hint">All researcher details are optional. Contact information should be accessible only to authorized MIsoTEx administrators.</p>
+</fieldset>
+<div class="trap" aria-hidden="true"><label for="website">Leave empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<div class="actions"><button type="submit">Submit feedback</button></div>
+</form></main></body></html>
